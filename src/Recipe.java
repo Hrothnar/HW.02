@@ -3,24 +3,22 @@ import java.util.*;
 public class Recipe {
     private String recipeName;
     private int costOfRecipe;
-    private Set<Product> recipe = new HashSet<>();
+    private HashMap<Product, Integer> recipe = new HashMap<>();
     public static Set<Recipe> allRecipes = new HashSet<>();
 
 
     public Recipe(String recipeName) {
         if (recipeName != null && !recipeName.isBlank())
             this.recipeName = recipeName;
-//        if (recipe.size() != 0)
-//            this.recipe = recipe;
     }
 
-    public int getCostOfRecipe() {
-        int result = 0;
-        for (Product one : recipe) {
-            if (one.getCost() > 0)
-                result += one.getCost();
+    public double getCostOfRecipe() {
+        double result = 0;
+        for (Product one : recipe.keySet()) {
+            if (one.getCost() > 0 && recipe.get(one) > 0)
+                result += one.getCost() * recipe.get(one);
             else
-                throw new RuntimeException("Укажите стоимость продукта " + one.getType());
+                throw new RuntimeException("Укажите стоимость или количество продукта " + one.getType());
         }
         return result;
     }
@@ -29,7 +27,7 @@ public class Recipe {
         return recipeName;
     }
 
-    public Set<Product> getRecipe() {
+    public HashMap<Product, Integer> getRecipe() {
         return recipe;
     }
 

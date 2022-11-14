@@ -10,26 +10,28 @@ public class Main {
         Product orange = new Product("Апельсин", 104, 1.3);
 
         ShoppingList.addProductToList(apple);
-        ShoppingList.addProductToList(apple);
+//        ShoppingList.addProductToList(apple);
 //        ShoppingList.addProductToList(banana);
         ShoppingList.addProductToList(strawberry);
 
-        ShoppingList.buyProductFromList(apple);
+//        ShoppingList.buyProductFromList(apple);
 //        ShoppingList.buyProductFromList(apple);
 
         Recipe fruitSalad = new Recipe("Фруктовый салат");
-        fruitSalad.getRecipe().add(apple);
-        fruitSalad.getRecipe().add(banana);
-        fruitSalad.getRecipe().add(orange);
-        fruitSalad.getRecipe().add(yogurt);
+        fruitSalad.getRecipe().put(apple, 2);
+        fruitSalad.getRecipe().put(banana, 1);
+        fruitSalad.getRecipe().put(orange, 1);
+        fruitSalad.getRecipe().put(yogurt, 1);
 
-        Recipe fruitSalad1 = new Recipe("Ещё один фруктовый салат");
-        fruitSalad1.getRecipe().add(apple);
-        fruitSalad1.getRecipe().add(banana);
-        fruitSalad1.getRecipe().add(orange);
-        fruitSalad1.getRecipe().add(yogurt);
+        Recipe fruitSalad1 = new Recipe("Фруктовый салат на семью с клубникой");
+        fruitSalad1.getRecipe().put(apple, 4);
+        fruitSalad1.getRecipe().put(banana, 2);
+        fruitSalad1.getRecipe().put(orange, 2);
+        fruitSalad1.getRecipe().put(yogurt, 2);
+        fruitSalad1.getRecipe().put(strawberry, 2);
 
-        System.out.println(fruitSalad.getCostOfRecipe());
+        System.out.println("Стоимость: " + fruitSalad.getCostOfRecipe());
+        System.out.println("Стоимость: " + fruitSalad1.getCostOfRecipe());
 
         Recipe.addRecipeToCookbook(fruitSalad);
 //        Recipe.addRecipeToCookbook(fruitSalad);
