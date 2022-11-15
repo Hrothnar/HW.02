@@ -9,14 +9,6 @@ public class Main {
         Product yogurt = new Product("Йогурт", 55, 0.34);
         Product orange = new Product("Апельсин", 104, 1.3);
 
-        ShoppingList.addProductToList(apple);
-//        ShoppingList.addProductToList(apple);
-//        ShoppingList.addProductToList(banana);
-        ShoppingList.addProductToList(strawberry);
-
-//        ShoppingList.buyProductFromList(apple);
-//        ShoppingList.buyProductFromList(apple);
-
         Recipe fruitSalad = new Recipe("Фруктовый салат");
         fruitSalad.getRecipe().put(apple, 2);
         fruitSalad.getRecipe().put(banana, 1);
@@ -33,9 +25,6 @@ public class Main {
         System.out.println("Стоимость: " + fruitSalad.getCostOfRecipe());
         System.out.println("Стоимость: " + fruitSalad1.getCostOfRecipe());
 
-        Recipe.addRecipeToCookbook(fruitSalad);
-//        Recipe.addRecipeToCookbook(fruitSalad);
-        Recipe.addRecipeToCookbook(fruitSalad1);
 
 
     }

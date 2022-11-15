@@ -1,18 +1,19 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ShoppingList {
-    public static List<Product> list = new ArrayList<>();
+    private static List<Product> list = new ArrayList<>();
 
     public static void addProductToList(Product product) {
-        if (product.getCost() == 0 || product.getWeight() == 0)
-            throw new RuntimeException("Заполните карточку товара полностью");
         try {
-            if (!list.contains(product))
+            if (product.getCost() == 0 || product.getWeight() == 0) {
+                throw new RuntimeException("Заполните карточку товара полностью");
+            }
+            if (!list.contains(product)) {
                 list.add(product);
-            else
+            } else {
                 throw new Exception(product.getType() + " уже есть в списке, у тебя амнезия, сходи к доктору, а пока продолжим.");
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

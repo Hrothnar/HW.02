@@ -4,7 +4,7 @@ public class Recipe {
     private String recipeName;
     private int costOfRecipe;
     private HashMap<Product, Integer> recipe = new HashMap<>();
-    public static Set<Recipe> allRecipes = new HashSet<>();
+    private static Set<Recipe> allRecipes = new HashSet<>();
 
 
     public Recipe(String recipeName) {
